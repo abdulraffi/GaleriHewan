@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "583223879760",
+    "firebase_url": "https://galeri-hewan-e0549.firebaseio.com",
+    "project_id": "galeri-hewan-e0549",
+    "storage_bucket": "galeri-hewan-e0549.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583223879760:android:22ae9b2b9cbe9de9",
+        "android_client_info": {
+          "package_name": "org.d3if_cool.ehcoslam.galerihewan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583223879760-r2fq63netqbe6gd88ivpuuc4o69vnu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ9tAbAJX-GT5SM7kxoUYJo8_wDKNPXgA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
