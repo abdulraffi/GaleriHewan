@@ -45,7 +45,8 @@ public class AdapterHewan extends ArrayAdapter<Hewan> {
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-
+                remove(getItem(idkey.indexOf(dataSnapshot.getKey())));
+                notifyDataSetChanged();
             }
 
             @Override

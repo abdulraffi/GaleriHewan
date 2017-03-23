@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -20,14 +21,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mAdapterHewan = new AdapterHewan(this,mDatabase.child("daftar"));
         mDatabase = mFirebase.getInstance().getReference();
+        mAdapterHewan = new AdapterHewan(this,mDatabase.child("daftar"));
         ListView listView = (ListView)findViewById(R.id.myList);
         listView.setAdapter(mAdapterHewan);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 mDatabase.child("daftar").child(mAdapterHewan.getIdkey().get(i)).setValue(new Hewan("mmmmmm"));
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mDatabase.child("daftar").child(mAdapterHewan.getIdkey().get(i)).removeValue(new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                        return;
+                    }
+                });
+                return true;
             }
         });
     }
